@@ -40,7 +40,7 @@ class StudentTableViewController: UIViewController {
         Students.shared.refreshStudents { (students, error) in
             DispatchQueue.main.async {
                 guard let students = students else {
-                    self.presentAlert()
+                    self.alert(message: "Unable to load student data")
                     return
                 }
                 self.students = students
@@ -71,7 +71,7 @@ extension StudentTableViewController: UITableViewDataSource, UITableViewDelegate
         if let url = students[indexPath.row].mediaURL {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
-            presentAlert("Invalid URL")
+            alert(message: "Invalid URL")
         }
     }
 }

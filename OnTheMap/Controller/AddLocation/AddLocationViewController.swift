@@ -23,6 +23,8 @@ class AddLocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         roundedCorners(findLocationButton)
+        locationTextField.delegate = self
+        websiteTextField.delegate = self
     }
     
     // MARK: UI Actions
@@ -33,11 +35,11 @@ class AddLocationViewController: UIViewController {
     
     @IBAction func findLocationButtonTapped(_ sender: Any) {
         if locationTextField.text == "" && websiteTextField.text == "" {
-            presentAlert("Please enter a valid location and website")
+            alert(message: "Please enter a valid location and website")
         } else if locationTextField.text == "" {
-            presentAlert("Please enter a valid location")
+            alert(message: "Please enter a valid location")
         } else if websiteTextField.text == "" {
-            presentAlert("Please enter a valid website")
+            alert(message: "Please enter a valid website")
         } else {
             performSegue(withIdentifier: "confirmLocation", sender: nil)
         }
@@ -47,15 +49,5 @@ class AddLocationViewController: UIViewController {
         let controller = segue.destination as! ConfirmLocationViewController
         controller.location = locationTextField.text ?? ""
         controller.website = websiteTextField.text ?? ""
-    }
-}
-
-// MARK: - AddLocationViewController: UITextFieldDelegate
-
-extension AddLocationViewController: UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        resignFirstResponder()
-        return true
     }
 }

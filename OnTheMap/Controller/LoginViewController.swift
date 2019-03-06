@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SystemConfiguration
 
 // MARK: - LoginViewController: UIViewController
 
@@ -31,11 +32,15 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         roundedCorners(loginButton)
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        //self.checkReachable()
     }
     
     // MARK: UI Actions
     
     @IBAction func loginButtonTapped(_ sender: Any) {
+        checkReachable()
         setLoggingIn(true)
         UdacityClient.postSession(username: emailTextField.text ?? "", password: passwordTextField.text ?? "", completion: handleSessionResponse(success:error:))
     }
@@ -52,7 +57,7 @@ class LoginViewController: UIViewController {
         if success {
             performSegue(withIdentifier: "completeLogin", sender: nil)
         } else {
-            presentAlert("Login Failed")
+            alert(message: "Wrong Username or Password used. Please try again")
         }
     }
     
@@ -69,14 +74,49 @@ class LoginViewController: UIViewController {
             self.signUpButton.isEnabled = !loggingIn
         }
     }
-}
 
-// MARK: - LoginViewController: UITextFieldDelegate
-
-extension LoginViewController: UITextFieldDelegate {
+    // MARK: Check Reachability Status
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+    private let reachability = SCNetworkReachabilityCreateWithName(nil, "www.udacity.com")
+    
+    private func checkReachable() {
+        var flags = SCNetworkReachabilityFlags()
+        SCNetworkReachabilityGetFlags(reachability!, &flags)
+        
+        if (isNetworkReachable(with: flags)) {
+            if flags.contains(.isWWAN) {
+                return
+            }
+        }
+        else if (!isNetworkReachable(with: flags)) {
+            alert(message: "No internet connection found. Please check your settings and try again")
+            return
+        }
+    }
+    
+    private func isNetworkReachable(with flags: SCNetworkReachabilityFlags) -> Bool {
+        let isReachable = flags.contains(.reachable)
+        let needsConnection = flags.contains(.connectionRequired)
+        let canConnectAutomatically = flags.contains(.connectionOnDemand) || flags.contains(.connectionOnTraffic)
+        let canConnectWithoutUserInteraction = canConnectAutomatically && !flags.contains(.interventionRequired)
+        return isReachable && (!needsConnection || canConnectWithoutUserInteraction)
+    }
+    
+    @objc func reachabilityChanged(note: Notification) {
+        
+        let reachability = note.object as! Reachability
+        
+        switch reachability.connection {
+        case .wifi:
+            print("Reachable via WiFi")
+        case .cellular:
+            print("Reachable via Cellular")
+        case .none:
+            print("Network not reachable")
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 }

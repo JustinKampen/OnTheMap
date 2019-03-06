@@ -53,7 +53,7 @@ class StudentMapViewController: UIViewController {
                 self.activityIndicator(isDisplayed: false)
                 DispatchQueue.main.async {
                     guard let students = students else {
-                        self.presentAlert("Failed to load students")
+                        self.alert(message: "Unable to load student data")
                         return
                     }
                     self.students = students

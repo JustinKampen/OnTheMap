@@ -26,6 +26,7 @@
 		29AED1BB2229CEA400B3A9BA /* StudentResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AED1BA2229CEA400B3A9BA /* StudentResults.swift */; };
 		D05CA971222BAF53001F0976 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05CA970222BAF53001F0976 /* Profile.swift */; };
 		D0A60EDB22290DF8008AC5A0 /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A60EDA22290DF8008AC5A0 /* LogoutRequest.swift */; };
+		D0C533152230561200C30A13 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C533142230561200C30A13 /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		29AED1BA2229CEA400B3A9BA /* StudentResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentResults.swift; sourceTree = "<group>"; };
 		D05CA970222BAF53001F0976 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		D0A60EDA22290DF8008AC5A0 /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
+		D0C533142230561200C30A13 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				298D526B222870B0004E87BC /* MapView */,
 				298D526A222870A3004E87BC /* TableView */,
 				298D526C222870C5004E87BC /* AddLocation */,
+				D0C533142230561200C30A13 /* Reachability.swift */,
 				2909C1DF222884B3008121CC /* Extensions.swift */,
 			);
 			path = Controller;
@@ -263,6 +266,7 @@
 				2909C1E222288A3D008121CC /* SessionResponse.swift in Sources */,
 				298D52612228702C004E87BC /* StudentMapViewController.swift in Sources */,
 				298D525F22287017004E87BC /* LoginViewController.swift in Sources */,
+				D0C533152230561200C30A13 /* Reachability.swift in Sources */,
 				298D526322287045004E87BC /* StudentTableViewController.swift in Sources */,
 				298D526722287089004E87BC /* AddLocationViewController.swift in Sources */,
 				29AED1BB2229CEA400B3A9BA /* StudentResults.swift in Sources */,

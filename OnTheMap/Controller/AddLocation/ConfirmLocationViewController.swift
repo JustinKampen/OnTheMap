@@ -46,7 +46,7 @@ class ConfirmLocationViewController: UIViewController {
             if data != nil {
                 self.handleUserProfileResponse()
             } else {
-                self.presentAlert()
+                self.alert(message: "Unable to load information")
             }
         }
     }
@@ -59,9 +59,9 @@ class ConfirmLocationViewController: UIViewController {
         }
         ParseClient.postStudent(objectId: UdacityClient.UserInfo.key, firstName: UdacityClient.UserInfo.firstName, lastName: UdacityClient.UserInfo.lastName, mapString: location ?? "", mediaURL: mediaURL, latitude: Double(coordinate?.latitude ?? 0.0), longitude: Double(coordinate?.longitude ?? 0.0)) { (success) in
             if success {
-                self.presentAlert("Your information has been posted")
+                self.alert(message: "Your information has been posted")
             } else {
-                self.presentAlert("There was an error while posting your information")
+                self.alert(message: "There was an error while posting your information")
             }
         }
     }
@@ -76,7 +76,7 @@ class ConfirmLocationViewController: UIViewController {
             DispatchQueue.main.async {
                 guard let placemarks = placemarks else {
                     self.activityIndicator(isDisplayed: false)
-                    self.presentAlert("There was a problem searching for the location")
+                    self.alert(message: "There was a problem searching for the location")
                     return
                 }
                 if let placemark = placemarks.first, let location = placemark.location {

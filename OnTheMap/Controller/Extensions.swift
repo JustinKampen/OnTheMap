@@ -12,14 +12,14 @@ import UIKit
 
 extension UIViewController {
     
-    // MARK: Present Alert
+    // MARK: Present Error Alert Message to User
     
-    func presentAlert(_ message: String = "There was a problem performing that action.") {
+    func alert(message: String, title: String = "") {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(OKAction)
         DispatchQueue.main.async {
-            let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alert.addAction(action)
-            self.present(alert, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
         }
     }
     
@@ -39,5 +39,14 @@ extension UIViewController {
             }
         }
     }
+}
+
+// MARK: - UIViewController: UITextFieldDelegate
+
+extension UIViewController: UITextFieldDelegate {
     
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
