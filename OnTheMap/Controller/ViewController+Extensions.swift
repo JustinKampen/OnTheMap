@@ -1,5 +1,5 @@
 //
-//  Extensions.swift
+//  ViewController+Extensions.swift
 //  OnTheMap
 //
 //  Created by Justin Kampen on 2/28/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-// MARK: - UIViewController Extensions
+// MARK: - UIViewController ViewController+Extensions
 
 extension UIViewController {
     

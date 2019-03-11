@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2909C1E0222884B3008121CC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2909C1DF222884B3008121CC /* Extensions.swift */; };
+		2909C1E0222884B3008121CC /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2909C1DF222884B3008121CC /* ViewController+Extensions.swift */; };
 		2909C1E222288A3D008121CC /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2909C1E122288A3D008121CC /* SessionResponse.swift */; };
 		2909C1E622289C94008121CC /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2909C1E522289C94008121CC /* StudentInformation.swift */; };
 		2909C1E822289DD8008121CC /* Students.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2909C1E722289DD8008121CC /* Students.swift */; };
@@ -30,7 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2909C1DF222884B3008121CC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2909C1DF222884B3008121CC /* ViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = "<group>"; };
 		2909C1E122288A3D008121CC /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
 		2909C1E522289C94008121CC /* StudentInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
 		2909C1E722289DD8008121CC /* Students.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Students.swift; sourceTree = "<group>"; };
@@ -114,12 +114,12 @@
 		298D525522286F77004E87BC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				298D525E22287017004E87BC /* LoginViewController.swift */,
+				D09482492233AE950015460B /* Login */,
 				298D526B222870B0004E87BC /* MapView */,
 				298D526A222870A3004E87BC /* TableView */,
 				298D526C222870C5004E87BC /* AddLocation */,
 				D0C533142230561200C30A13 /* Reachability.swift */,
-				2909C1DF222884B3008121CC /* Extensions.swift */,
+				2909C1DF222884B3008121CC /* ViewController+Extensions.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,6 +187,14 @@
 				298D526822287095004E87BC /* ConfirmLocationViewController.swift */,
 			);
 			path = AddLocation;
+			sourceTree = "<group>";
+		};
+		D09482492233AE950015460B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				298D525E22287017004E87BC /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,7 +279,7 @@
 				298D526722287089004E87BC /* AddLocationViewController.swift in Sources */,
 				29AED1BB2229CEA400B3A9BA /* StudentResults.swift in Sources */,
 				298D525D22286FE9004E87BC /* ParseClient.swift in Sources */,
-				2909C1E0222884B3008121CC /* Extensions.swift in Sources */,
+				2909C1E0222884B3008121CC /* ViewController+Extensions.swift in Sources */,
 				298D526922287095004E87BC /* ConfirmLocationViewController.swift in Sources */,
 				298D52652228704E004E87BC /* StudentTableViewCell.swift in Sources */,
 				D0A60EDB22290DF8008AC5A0 /* LogoutRequest.swift in Sources */,

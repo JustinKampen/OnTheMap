@@ -59,7 +59,7 @@ class ConfirmLocationViewController: UIViewController {
         }
         ParseClient.postStudent(objectId: UdacityClient.UserInfo.key, firstName: UdacityClient.UserInfo.firstName, lastName: UdacityClient.UserInfo.lastName, mapString: location ?? "", mediaURL: mediaURL, latitude: Double(coordinate?.latitude ?? 0.0), longitude: Double(coordinate?.longitude ?? 0.0)) { (success) in
             if success {
-                self.alert(message: "Your information has been posted")
+                self.showSuccessAlert()
             } else {
                 self.alert(message: "There was an error while posting your information")
             }
@@ -92,6 +92,16 @@ class ConfirmLocationViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    func showSuccessAlert() {
+        let alert = UIAlertController(title: "Congratulations", message: "Your information has been posted", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
+            DispatchQueue.main.async {
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func activityIndicator(isDisplayed: Bool) {
