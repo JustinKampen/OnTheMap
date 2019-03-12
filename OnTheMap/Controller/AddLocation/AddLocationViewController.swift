@@ -8,17 +8,17 @@
 
 import UIKit
 
-// MARK: - AddLocationViewController: UIViewController
+// MARK: AddLocationViewController: UIViewController
 
 class AddLocationViewController: UIViewController {
     
-    // MARK: Outlets
+    // MARK: - IBOutlets
     
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var websiteTextField: UITextField!
     @IBOutlet weak var findLocationButton: UIButton!
     
-    // MARK: Life Cycle
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class AddLocationViewController: UIViewController {
         websiteTextField.delegate = self
     }
     
-    // MARK: UI Actions
+    // MARK: - IBActions
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)

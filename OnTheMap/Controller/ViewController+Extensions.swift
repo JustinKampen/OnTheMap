@@ -8,11 +8,11 @@
 
 import UIKit
 
-// MARK: - UIViewController ViewController+Extensions
+// MARK: ViewController+Extensions
 
 extension UIViewController {
     
-    // MARK: Present Error Alert Message to User
+    // MARK: - Present Error Alert Message to User
     
     func alert(message: String, title: String = "") {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -23,14 +23,14 @@ extension UIViewController {
         }
     }
     
-    // MARK: Round Button Corners
+    // MARK: - Round Button Corners
     
     func roundedCorners(_ item: UIView) {
         item.layer.masksToBounds = true
         item.layer.cornerRadius = 5.0
     }
     
-    // MARK: Logout UI Action
+    // MARK: - Logout UI Action
     
     @IBAction func logoutTapped(_ sender: UIBarButtonItem) {
         UdacityClient.logout {

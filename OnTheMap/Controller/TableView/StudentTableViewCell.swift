@@ -8,11 +8,11 @@
 
 import UIKit
 
-// MARK: - StudentTableViewCell: UITableViewCell
+// MARK: StudentTableViewCell: UITableViewCell
 
 class StudentTableViewCell: UITableViewCell {
     
-    // MARK: Outlets
+    // MARK: - IBOutlets
     
     @IBOutlet weak var studentNameLabel: UILabel!
     @IBOutlet weak var studentUrlLabel: UILabel!

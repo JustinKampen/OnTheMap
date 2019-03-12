@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: - SessionResponse: Codable
+// MARK: SessionResponse: Codable
 
 struct SessionResponse: Codable {
     var account: Account

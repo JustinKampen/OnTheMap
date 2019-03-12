@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: - LogoutRequest: Codable
+// MARK: LogoutRequest: Codable
 
 struct LogoutRequest: Codable {
     let id: String

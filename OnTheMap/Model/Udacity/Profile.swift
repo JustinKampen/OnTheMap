@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: - Profile: Codable
+// MARK: Profile: Codable
 
 struct Profile: Codable {
     var key: String

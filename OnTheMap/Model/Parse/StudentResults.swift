@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: - StudentResults: Codable
+// MARK: StudentResults: Codable
 
 struct StudentResults: Codable {
     var results: [StudentInformaiton]

@@ -8,17 +8,17 @@
 
 import UIKit
 
-// MARK: - StudentTableViewController: UIViewController
+// MARK: StudentTableViewController: UIViewController
 
 class StudentTableViewController: UIViewController {
     
-    // MARK: Outlets
+    // MARK: - IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
     
     var students = [StudentInformaiton]()
     
-    // MARK: Life Cycle
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +27,14 @@ class StudentTableViewController: UIViewController {
         getStudents()
     }
     
-    // MARK: UI Actions
+    // MARK: - IBActions
     
     @IBAction func refreshButtonTapped(_ sender: Any) {
         getStudents()
         tableView.reloadData()
     }
     
-    // MARK: Get and Refresh Students
+    // MARK: - Get and Refresh Students
     
     func getStudents() {
         Students.shared.refreshStudents { (students, error) in

@@ -9,11 +9,11 @@
 import UIKit
 import MapKit
 
-// MARK: - StudentMapViewController: UIViewController
+// MARK: StudentMapViewController: UIViewController
 
 class StudentMapViewController: UIViewController {
     
-    // MARK: Outlets
+    // MARK: - IBOutlets
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -24,7 +24,7 @@ class StudentMapViewController: UIViewController {
         }
     }
 
-    //MARK: Life Cycle
+    //MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,14 +33,14 @@ class StudentMapViewController: UIViewController {
         populateMap()
     }
     
-    // MARK: UI Actions
+    // MARK: - IBActions
     
     @IBAction func refreshButtonTapped(_ sender: Any) {
         activityIndicator(isDisplayed: true)
         getStudents()
     }
     
-    // MARK: Get and Refresh Students
+    // MARK: - Get and Refresh Students
     
     func refreshStudents() {
         activityIndicator(isDisplayed: true)

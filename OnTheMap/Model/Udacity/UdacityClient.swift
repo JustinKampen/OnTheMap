@@ -8,18 +8,18 @@
 
 import Foundation
 
-// MARK: - UdacityClient
+// MARK: UdacityClient
 
 class UdacityClient {
     
-    // MARK: Udacity Authentication
+    // MARK: - Udacity Authentication Properties
     
     struct Authentication {
         static var accountKey = ""
         static var sessionId = ""
     }
     
-    // MARK: User Information
+    // MARK: - User Information Properties
     
     struct UserInfo {
         static var key = ""
@@ -27,7 +27,7 @@ class UdacityClient {
         static var lastName = ""
     }
     
-    // MARK: Udacity URL Addresses
+    // MARK: - Udacity URL Endpoints
     
     enum Endpoints {
         static let base = "https://onthemap-api.udacity.com/v1"
@@ -49,7 +49,7 @@ class UdacityClient {
         }
     }
     
-    // MARK: UdacityClient Class Functions
+    // MARK: - UdacityClient Class Functions
     
     class func postSession(username: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
         var request = URLRequest(url: Endpoints.session.url)

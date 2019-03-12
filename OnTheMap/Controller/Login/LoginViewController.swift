@@ -9,11 +9,11 @@
 import UIKit
 import SystemConfiguration
 
-// MARK: - LoginViewController: UIViewController
+// MARK: LoginViewController: UIViewController
 
 class LoginViewController: UIViewController {
     
-    // MARK: Outlets
+    // MARK: - IBOutlets
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    // MARK: Life Cycle
+    // MARK: - Life Cycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
         //self.checkReachable()
     }
     
-    // MARK: UI Actions
+    // MARK: - IBActions
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         checkReachable()
@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
         UIApplication.shared.open(signUpURL, options: [:], completionHandler: nil)
     }
     
-    // MARK: Login Functions
+    // MARK: - Login Functions
     
     func handleSessionResponse(success: Bool, error: Error?) {
         setLoggingIn(false)
@@ -75,7 +75,7 @@ class LoginViewController: UIViewController {
         }
     }
 
-    // MARK: Check Reachability Status
+    // MARK: - Check Reachability Status
     
     private let reachability = SCNetworkReachabilityCreateWithName(nil, "www.udacity.com")
     

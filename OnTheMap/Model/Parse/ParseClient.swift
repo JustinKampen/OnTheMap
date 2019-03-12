@@ -8,16 +8,16 @@
 
 import Foundation
 
-// MARK: - ParseClient
+// MARK: ParseClient
 
 class ParseClient {
     
-    // MARK: Parse URL Properties
+    // MARK: - Parse URL Properties
     
     static let applicationId = "QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr"
     static let apiKey = "QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY"
     
-    // MARK: Parse URL Addresses
+    // MARK: - Parse URL Endpoints
     
     enum Endpoints {
         static let base = "https://parse.udacity.com/parse/classes"
@@ -45,7 +45,7 @@ class ParseClient {
         }
     }
     
-    // MARK: ParseClient Class Functions
+    // MARK: - ParseClient Class Functions
     
     class func getStudents(limit: Int = 100, completion: @escaping ([StudentInformaiton]?, Error?) -> Void) {
         var request = URLRequest(url: Endpoints.getStudents(limit).url)

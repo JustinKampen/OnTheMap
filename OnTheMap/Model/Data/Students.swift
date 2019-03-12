@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: - Student
+// MARK: Student
 
 class Students {
     

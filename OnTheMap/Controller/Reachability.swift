@@ -9,7 +9,7 @@
 import SystemConfiguration
 import Foundation
 
-// MARK: - Reachability
+// MARK: Reachability
 
 public enum ReachabilityError: Error {
     case FailedToCreateWithAddress(sockaddr_in)

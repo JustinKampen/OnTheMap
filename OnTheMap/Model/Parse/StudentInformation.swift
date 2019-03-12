@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: - StudentInformation: Codable
+// MARK: StudentInformation: Codable
 
 struct StudentInformaiton: Codable {
     let id: String

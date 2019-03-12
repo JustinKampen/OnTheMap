@@ -10,11 +10,11 @@ import UIKit
 import MapKit
 import CoreLocation
 
-// MARK: - ConfirmLocationViewController: UIViewController
+// MARK: ConfirmLocationViewController: UIViewController
 
 class ConfirmLocationViewController: UIViewController {
     
-    // MARK: Outlets and Properties
+    // MARK: - IBOutlets and Properties
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var finishButton: UIButton!
@@ -24,7 +24,7 @@ class ConfirmLocationViewController: UIViewController {
     var website: String?
     var coordinate: CLLocationCoordinate2D?
     
-    // MARK: Life Cycle
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class ConfirmLocationViewController: UIViewController {
         }
     }
     
-    // MARK: UI Actions
+    // MARK: - IBActions
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -51,7 +51,7 @@ class ConfirmLocationViewController: UIViewController {
         }
     }
     
-    // MARK: Get User Info and perform Post
+    // MARK: - Get User Info and Perform Post
     
     func handleUserProfileResponse() {
         guard let mediaURL = URL(string: website ?? "") else {
