@@ -55,7 +55,9 @@ class LoginViewController: UIViewController {
     func handleSessionResponse(success: Bool, error: Error?) {
         setLoggingIn(false)
         if success {
-            performSegue(withIdentifier: "completeLogin", sender: nil)
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "completeLogin", sender: nil)
+            }
         } else {
             alert(message: "Wrong Username or Password used. Please try again")
         }

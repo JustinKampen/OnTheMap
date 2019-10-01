@@ -51,6 +51,7 @@
 		29AED1BA2229CEA400B3A9BA /* StudentResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentResults.swift; sourceTree = "<group>"; };
 		D05CA970222BAF53001F0976 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		D0A60EDA22290DF8008AC5A0 /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
+		D0B91F642342A706006CE396 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D0C533142230561200C30A13 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +77,7 @@
 		293AA18922286F4400DA5569 = {
 			isa = PBXGroup;
 			children = (
+				D0B91F642342A706006CE396 /* README.md */,
 				293AA19422286F4400DA5569 /* OnTheMap */,
 				293AA19322286F4400DA5569 /* Products */,
 			);
@@ -229,6 +231,7 @@
 				TargetAttributes = {
 					293AA19122286F4400DA5569 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -439,7 +442,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = justinkampen.com.OnTheMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -457,7 +460,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = justinkampen.com.OnTheMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

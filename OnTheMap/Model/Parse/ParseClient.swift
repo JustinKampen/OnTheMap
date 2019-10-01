@@ -20,7 +20,7 @@ class ParseClient {
     // MARK: - Parse URL Endpoints
     
     enum Endpoints {
-        static let base = "https://parse.udacity.com/parse/classes"
+        static let base = "https://onthemap-api.udacity.com/v1/"
         
         case getStudents(Int)
         case getStudent(String)
@@ -104,7 +104,7 @@ class ParseClient {
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard error == nil,
                 let data = data,
-                let response = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                let response = ((try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]) as [String : Any]??),
                 (response?["updatedAt"] as? String != nil || response?["createdAt"] as? String != nil) else {
                     completion(false)
                     return
@@ -122,7 +122,7 @@ class ParseClient {
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard error == nil,
                 let data = data,
-                let response = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                let response = ((try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]) as [String : Any]??),
                 (response?["updatedAt"] as? String != nil || response?["createdAt"] as? String != nil) else {
                     completion(false, error)
                     return
